@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="Login" >
+      <div class="unknown">
+          <img src="../../assets/imgs/unknown.jpg" alt="Unknown" height="90%" width="90%" >
+        </div>
+  <ion-item>
+    <ion-label color="primary" stacked> Email</ion-label>
+    <ion-input type="email" [(ngModel)]="email" formControlName="email" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+
+    <ion-col>
+    <button ion-button full (click)="perfomLogin()" [disabled]="!Signup.valid">Log In</button>
+      </ion-col>
+    
+ <ion-col> 
+   <button ion-button full (click)="navigate('r')">Sign Up</button>
+  </ion-col>
+
+  <ion-col> 
+    <button ion-button  full (click)="googlesign()">Google Sign In</button>
+   </ion-col>
+   
+
+  </ion-row>
+
+
+  <span class="psw">Forgot <a href="#">password?</a></span>
+
+  </ion-grid>
+</form>
+</ion-content>
